@@ -48,7 +48,6 @@ def test_update_booking_with_depositpaid_values(
 
 
 @pytest.mark.update_booking
-@pytest.mark.negative
 def test_update_booking_without_token(booking_client):
     created = booking_client.create_booking(generate_booking_payload())
     created_model = CreateBookingResponse.model_validate(created)
