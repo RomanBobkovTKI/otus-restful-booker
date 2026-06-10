@@ -20,10 +20,13 @@ class BaseClient:
         if not response.ok:
             raise Exception(f"{response.status_code}: {response.text}")
 
-        if response.text:
-            return response.json()
+        if not response.text:
+            return None
 
-        return None
+        try:
+            return response.json()
+        except ValueError:
+            return response.text
 
     def get(self, path: str, **kwargs):
         return self._request("GET", path, **kwargs)
