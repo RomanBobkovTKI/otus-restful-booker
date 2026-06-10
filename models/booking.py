@@ -13,3 +13,8 @@ class BookingResponse(BaseModel):
     depositpaid: bool
     bookingdates: BookingDates
     additionalneeds: str
+
+
+class CreateBookingResponse(BaseModel):
+    bookingid: int
+    booking: BookingResponse
