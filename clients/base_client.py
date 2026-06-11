@@ -1,5 +1,7 @@
 import requests
 
+from utils.logger import logger
+
 
 class BaseClient:
     def __init__(self, base_url: str, timeout: int = 10):
@@ -13,9 +15,19 @@ class BaseClient:
     def _request(self, method: str, path: str, **kwargs):
         url = self._url(path)
 
+        logger.info("Request: %s %s", method, url)
+        logger.debug("Request kwargs: %s", kwargs)
+
         response = self.session.request(
             method=method, url=url, timeout=self.timeout, **kwargs
         )
+
+        logger.info(
+            "Response: %s %s",
+            response.status_code,
+            response.reason,
+        )
+        logger.debug("Response body: %s", response.text)
 
         if not response.ok:
             raise Exception(f"{response.status_code}: {response.text}")
