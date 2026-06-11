@@ -9,7 +9,6 @@ from utils.data_factory import generate_booking_payload
 @allure.feature("PATCH booking")
 @allure.story("Partial update booking")
 class TestPartialUpdateBooking:
-
     @allure.title("Partial update booking firstname and lastname")
     @pytest.mark.partial_update_booking
     def test_partial_update_booking_firstname_lastname(self, booking_client, token):
