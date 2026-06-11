@@ -28,4 +28,4 @@ class TestDeleteBooking:
             )
 
         with allure.step("Validate delete booking response"):
-            BookingAssertions.assert_booking_deleted(response)
+            assert response == "Created"
