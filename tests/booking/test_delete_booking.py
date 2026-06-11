@@ -9,7 +9,6 @@ from utils.data_factory import generate_booking_payload
 @allure.feature("DELETE booking")
 @allure.story("Delete booking")
 class TestDeleteBooking:
-
     @allure.title("Delete booking")
     @pytest.mark.delete_booking
     def test_delete_booking(self, booking_client, token):

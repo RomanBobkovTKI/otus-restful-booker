@@ -9,7 +9,6 @@ from utils.data_factory import generate_booking_payload
 @allure.feature("CREATE booking")
 @allure.story("Create booking")
 class TestCreateBooking:
-
     @allure.title("Create booking")
     @pytest.mark.create_booking
     def test_create_booking(self, booking_client):
