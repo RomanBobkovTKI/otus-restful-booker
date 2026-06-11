@@ -12,6 +12,15 @@
 * python-dotenv
 * Allure Report
 
+## Запуск тестов в Docker
+
+```commandline
+docker compose run --rm tests
+docker compose up allure -d
+```
+
+Затем перейти на http://localhost:5050/allure-docker-service/projects/default/reports/latest/index.html
+
 ## Структура проекта
 
 ```text
